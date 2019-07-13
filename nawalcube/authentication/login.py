@@ -21,7 +21,7 @@ import time
 @bp_login.route("/testlogin",methods=["GET","OPTIONS"])
 def tstnatlogin():
     if request.method=="OPTIONS":
-        print("inside testlogin options")
+        print("inside testlogin options test")
         return "inside testlogin options"
 
     elif request.method=="GET":
