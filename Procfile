@@ -1,1 +1,1 @@
-web: gunicorn assetscube:app
+web: gunicorn nawalcube:app
