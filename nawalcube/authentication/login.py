@@ -17,12 +17,12 @@ import requests
 import time
 
 
-@bp_auth.route("/tstnatlogin")
-@bp_login.route("/tstnatlogin",methods=["GET","OPTIONS"])
+@bp_auth.route("/testlogin")
+@bp_login.route("/testlogin",methods=["GET","OPTIONS"])
 def tstnatlogin():
     if request.method=="OPTIONS":
-        print("inside tstlogin options")
-        return "inside tstlogin options"
+        print("inside testlogin options")
+        return "inside testlogin options"
 
     elif request.method=="GET":
         #res_to_send, response = login_common(request, 'nc')
