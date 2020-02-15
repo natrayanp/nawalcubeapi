@@ -27,6 +27,9 @@ def callback():
         print("inside callback get")
         params = request.args
         print(params)
+        code = params.split('code=')[1]
+        print('code')
+        print(code)
         #print(settings.MYNOTIPG[settings.LIVE])
         #url = settings.MYNOTIPG[settings.LIVE]
         url = 'http://localhost:4200'
@@ -47,13 +50,15 @@ def callback():
         print("inside callback POST")
         #payload = request.get_json()
         payload = request.data
+        code = payload.split('code=')[1]
         print("payload 11111111")
         print(payload)
+        print(code)
        
         print(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
 
-        #url = settings.MYNOTIPG[settings.LIVE]
-        url = 'https://waki.store/shop/'
+        url = settings.MYNOTIPG[settings.LIVE]
+        #url = 'https://waki.store/shop/'
         typ = 'login'
         regdata = 'success'
         msg = 'test message'
