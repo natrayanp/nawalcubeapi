@@ -561,7 +561,7 @@ def testapp():
         response1.headers['Access-Control-Allow-Origin'] = "*"
         response1.headers['Access-Control-Allow-Methods'] = "GET, POST, PATCH, PUT, DELETE, OPTIONS"
         dd = {'u':url}
-        return dd
+        return jsonify(dd)
 
         #return redirect(url, code=302)
         #return "inside login GET"
