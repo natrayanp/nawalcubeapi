@@ -536,8 +536,8 @@ def get_expiry_time(tkn_type, ut, expiremin=None) -> datetime:
     return et
     #return et.strftime('%d-%m-%YT%H:%M:%S')
  
- @bp_appfunc.route("/receive",methods=["GET","POST","OPTIONS"])
- def testapp():
+@bp_appfunc.route("/receive",methods=["GET","POST","OPTIONS"])
+def testapp():
     if request.method=="OPTIONS":
         print("inside receive options")
         return "inside login options"
