@@ -536,7 +536,7 @@ def get_expiry_time(tkn_type, ut, expiremin=None) -> datetime:
     return et
     #return et.strftime('%d-%m-%YT%H:%M:%S')
  
-@bp_appfunc.route("/receive",methods=["GET","POST","OPTIONS"])
+@bp_auth.route("/receive",methods=["GET","POST","OPTIONS"])
 def testapp():
     if request.method=="OPTIONS":
         print("inside receive options")
@@ -561,6 +561,6 @@ def testapp():
         response1.headers['Access-Control-Allow-Origin'] = "*"
         response1.headers['Access-Control-Allow-Methods'] = "GET, POST, PATCH, PUT, DELETE, OPTIONS"
         return response1
-        
+
         #return redirect(url, code=302)
         #return "inside login GET"
