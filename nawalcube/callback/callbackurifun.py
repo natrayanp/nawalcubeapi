@@ -49,14 +49,16 @@ def callback():
         response1.headers['Access-Control-Allow-Methods'] = "GET, POST, PATCH, PUT, DELETE, OPTIONS"
         response1.headers['Access-Control-Allow-Headers'] = "Origin, entityid, Content-Type, X-Auth-Token, countryid"
         print(response1.headers)
-            resp = requests.post('https://api.tdameritrade.com/v1/oauth2/token',
-                         headers={'Content-Type': 'application/x-www-form-urlencoded'},
-                         data={'grant_type': 'authorization_code',
-                               'refresh_token': '',
-                               'access_type': 'offline',
-                               'code': code,
-                               'client_id': client_id,
-                               'redirect_uri': redirect_uri})
+        client_id = 'MIF6RFEC7HN8WAJ5ZWWVZHV3EA3E7KVV'
+        redirect_uri = 'https://nawalapi.herokuapp.com/callback'   
+        resp = requests.post('https://api.tdameritrade.com/v1/oauth2/token',
+                        headers={'Content-Type': 'application/x-www-form-urlencoded'},
+                        data={'grant_type': 'authorization_code',
+                            'refresh_token': '',
+                            'access_type': 'offline',
+                            'code': code,
+                            'client_id': client_id,
+                            'redirect_uri': redirect_uri})
 
         if resp.status_code != 200:
             raise Exception('Could not authenticate!')
