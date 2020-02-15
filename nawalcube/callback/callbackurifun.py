@@ -28,9 +28,9 @@ def callback():
         print("inside callback get")
         params = request.args.getlist('code')
         print(params)
+        code1 = params[0]
         print('code1')
-        print(code1)
-        code1 = params.split('code=')[1]
+        print(code1)        
         code = up.unquote(code1)
 
         print('code')
