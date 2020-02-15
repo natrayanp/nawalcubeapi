@@ -535,3 +535,31 @@ def get_expiry_time(tkn_type, ut, expiremin=None) -> datetime:
     print(et)
     return et
     #return et.strftime('%d-%m-%YT%H:%M:%S')
+ 
+ @bp_appfunc.route("/receive",methods=["GET","POST","OPTIONS"])
+ def testapp():
+    if request.method=="OPTIONS":
+        print("inside receive options")
+        return "inside login options"
+
+    elif request.method=="POST":
+        print("inside receive POST")
+        username = request.args.get('request')
+        return "inside login POST"
+    
+    elif request.method=="GET":
+        print("inside receive GET")
+        print(request)
+        #print(request.args)
+        code = request.args.get('request')
+        print(code)
+        #return redirect('https://api.upstox.com/index/dialog/authorize?apiKey=9Rt7ZkV5TM8HaFVZN4bi03f86JDWft6E4hu5Krpl&redirect_uri=http://127.0.0.1:4200/upstox&response_type=code', code=302)
+        client_id = 'MIF6RFEC7HN8WAJ5ZWWVZHV3EA3E7KVV' + '@AMER.OAUTHAP'
+        redirect_uri = 'https://nawalapi.herokuapp.com/callback'        
+        url = 'https://auth.tdameritrade.com/auth?response_type=code&redirect_uri=' + redirect_uri + '&client_id=' + client_id
+        response1 = make_response(redirect(url, code=302))
+        response1.headers['Access-Control-Allow-Origin'] = "*"
+        response1.headers['Access-Control-Allow-Methods'] = "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+        return response1
+        #return redirect(url, code=302)
+        #return "inside login GET"
