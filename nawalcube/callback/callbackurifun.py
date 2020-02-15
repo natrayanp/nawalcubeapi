@@ -62,7 +62,9 @@ def callback():
 
         if resp.status_code != 200:
             raise Exception('Could not authenticate!')
+        print('22222222222222222')
         print(resp.json())
+        print('22222222222222222')
         return resp.json()
 
         return response1
