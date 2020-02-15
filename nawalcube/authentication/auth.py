@@ -561,5 +561,6 @@ def testapp():
         response1.headers['Access-Control-Allow-Origin'] = "*"
         response1.headers['Access-Control-Allow-Methods'] = "GET, POST, PATCH, PUT, DELETE, OPTIONS"
         return response1
+        
         #return redirect(url, code=302)
         #return "inside login GET"
