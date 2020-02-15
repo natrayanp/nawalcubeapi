@@ -26,12 +26,13 @@ def callback():
 
     elif request.method=="GET":
         print("inside callback get")
-        params = request.args
+        params = request.args.getlist('code')
         print(params)
-        code1 = params.split('code=')[1]
-        code = up.unquote(code1)
         print('code1')
         print(code1)
+        code1 = params.split('code=')[1]
+        code = up.unquote(code1)
+
         print('code')
         print(code)
         #print(settings.MYNOTIPG[settings.LIVE])
