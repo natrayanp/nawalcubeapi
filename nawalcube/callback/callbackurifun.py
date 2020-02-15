@@ -29,8 +29,9 @@ def callback():
         print(params)
         #print(settings.MYNOTIPG[settings.LIVE])
         #url = settings.MYNOTIPG[settings.LIVE]
-        url = 'https://waki.store/shop/'
-        typ = 'login'
+        url = 'http://localhost:4200'
+        #url = 'https://waki.store/shop/'
+        typ = 'tlogin'
         regdata = 'success'
         msg = 'test message'
  
@@ -63,4 +64,4 @@ def callback():
         response1.headers['Access-Control-Allow-Methods'] = "GET, POST, PATCH, PUT, DELETE, OPTIONS"
         response1.headers['Access-Control-Allow-Headers'] = "Origin, entityid, Content-Type, X-Auth-Token, countryid"
         print(response1.headers)
-        return response1  
+        return response1 
