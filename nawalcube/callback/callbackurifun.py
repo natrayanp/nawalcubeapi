@@ -67,6 +67,8 @@ def callback():
         dd = resp.json()
         hdr =  {'Authorization': 'Bearer ' + dd['access_token']}
         resp1 = requests.get('https://api.tdameritrade.com/v1/userprincipals', headers = hdr )
+        print('333333333')
+        print(resp1)
         print(resp1.json())
         print('22222222222222222')
         return resp.json()
