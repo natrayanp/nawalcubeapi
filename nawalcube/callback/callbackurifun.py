@@ -77,7 +77,7 @@ def callback():
         acc = acc_f['accountId']
         print('acc')
         print(acc)
-        resp2 = requests.get('https://api.tdameritrade.com/v1/accounts'+ str(acc), headers = hdr )
+        resp2 = requests.get('https://api.tdameritrade.com/v1/accounts/'+ str(acc), headers = hdr )
         print(resp2)
         print(resp2.json())
         print('4444444444444444444')
