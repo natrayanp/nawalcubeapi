@@ -64,6 +64,10 @@ def callback():
             raise Exception('Could not authenticate!')
         print('22222222222222222')
         print(resp.json())
+        dd = resp.json()
+        hdr =  {'Authorization': 'Bearer ' + dd['access_token']}
+        resp1 = requests.get('https://api.tdameritrade.com/v1/userprincipals', headers = hdr )
+        print(resp1.json())
         print('22222222222222222')
         return resp.json()
 
