@@ -70,6 +70,17 @@ def callback():
         print('333333333')
         print(resp1)
         print(resp1.json())
+        dd1 = resp1.json()
+        print('4444444444444444444')
+        acc_p = dd1['accounts']
+        acc_f = acc_p[0]
+        acc = acc_f['accountId']
+        print('acc')
+        print(acc)
+        resp2 = requests.get('https://api.tdameritrade.com/v1/accounts'+ str(acc), headers = hdr )
+        print(resp2)
+        print(resp2.json())
+        print('4444444444444444444')
         print('22222222222222222')
         return resp.json()
 
